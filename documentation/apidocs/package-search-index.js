@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"adhoc"},{"l":"All Packages","u":"allpackages-index.html"},{"l":"vertx"}];updateSearchResults();
