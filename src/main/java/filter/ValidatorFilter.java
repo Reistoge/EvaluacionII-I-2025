@@ -4,10 +4,10 @@ import model.RawData;
 
 public class ValidatorFilter implements RawDataFilter {
 
-    //
     @Override
     public RawData apply(RawData data) {
-        if (data == null || data.getType() == null || data.getTimestamp() == null) {
+        if (data == null || data.getType() == null || data.getTimestamp() == null ||
+                Double.isNaN(data.getMeasuredValue()) || Double.isInfinite(data.getMeasuredValue())) {
             throw new IllegalArgumentException("Incomplete data");
         }
         if (!data.getType().equals("temperature") && !data.getType().equals("mp")) {
@@ -15,4 +15,5 @@ public class ValidatorFilter implements RawDataFilter {
         }
         return data;
     }
+
 }

@@ -63,7 +63,9 @@ public class ReaderBDVerticle extends AbstractVerticle {
                         resultArray.add(new JsonObject()
                                 .put("variableType", reading.getType())
                                 .put("timestamp", reading.getTimestamp().toString())
-                                .put("value", reading.getValue()));
+                                .put("value", reading.getValue())
+                                .put("unit", reading.getUnit())); // se necesita para poder hacer el filtro de unidad
+
                     }
 
                     promise.complete(resultArray);

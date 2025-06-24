@@ -2,8 +2,13 @@ package vertx;
 
 import io.vertx.core.*;
 import io.vertx.core.Vertx;
+import io.vertx.core.json.Json;
+import io.vertx.core.json.JsonObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 /**
  * Main verticle that coordinates the deployment of all components in the
@@ -56,13 +61,14 @@ public class MainVerticle extends AbstractVerticle {
                 .onSuccess(id -> {
                     log.info("✅ Sistema de monitoreo iniciado.");
                     startPromise.complete();
+                    // se testea enviando datos de ejemplo a traves del eventBus.
+                    // testWithSampleData();
                 })
                 .onFailure(err -> {
                     log.error("Error al iniciar el sistema: " + err.getMessage());
                     startPromise.fail(err);
                 });
     }
-
     /**
      * Launches the Vert.x application from the command line.
      *
@@ -75,4 +81,33 @@ public class MainVerticle extends AbstractVerticle {
             }
         });
     }
+
+    private void testWithSampleData() {
+        log.info("Sending test data through the pipeline...");
+
+        // Example with Fahrenheit
+        JsonObject tempF = new JsonObject()
+                .put("variableType", "temperature")
+                .put("value", 86.0)
+                .put("unit", "F")
+                .put("timestamp", LocalDateTime.now().toString());
+        vertx.eventBus().publish("raw.data.incoming", tempF);
+
+        // Example with mg/m3
+        JsonObject mp = new JsonObject()
+                .put("variableType", "mp")
+                .put("value", 0.5)
+                .put("unit", "mg/m3")
+                .put("timestamp", LocalDateTime.now().toString());
+        vertx.eventBus().publish("raw.data.incoming", mp);
+
+        // Example with invalid type
+        JsonObject invalid = new JsonObject()
+                .put("variableType", "unknown")
+                .put("value", 100.0)
+                .put("unit", "C")
+                .put("timestamp", LocalDateTime.now().toString());
+        vertx.eventBus().publish("raw.data.incoming", invalid);
+    }
+
 }
