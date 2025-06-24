@@ -1,6 +1,9 @@
-package adhoc;
+package repository;
 
+import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
+import model.RawData;
+
 import java.util.List;
 
 /**
@@ -46,7 +49,23 @@ public class RawDataRepository {
      * @return a list of raw data records (to be implemented)
      */
     public List<RawData> findAll() {
-        return null; // to be implemented by the student
+        EntityManager em = emf.createEntityManager();
+        try {
+            return em.createQuery("SELECT r FROM RawData r", RawData.class).getResultList();
+        } finally {
+            em.close();
+        }
+    }
+    public void save(RawData data) {
+        EntityManager em = emf.createEntityManager();
+        try {
+            em.getTransaction().begin();
+            em.persist(data);
+            em.getTransaction().commit();
+        } finally {
+            if (em.getTransaction().isActive()) em.getTransaction().rollback();
+            em.close();
+        }
     }
 
     /**

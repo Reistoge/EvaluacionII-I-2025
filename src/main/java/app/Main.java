@@ -1,9 +1,16 @@
-package adhoc;
+package app;
 
+import filter.ExtremeValueFilter;
+import filter.RawDataFilter;
+import filter.UnitNormalizerFilter;
+import filter.ValidatorFilter;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
+import repository.CleanDataRepository;
+import repository.RawDataRepository;
+import service.RawDataProcessingService;
 
 import java.util.List;
 
@@ -50,7 +57,9 @@ public class Main {
 
         // TODO: Instantiate filters and replace `null` entries
         List<RawDataFilter> filters = List.of(
-                null
+                new ValidatorFilter(),
+                new UnitNormalizerFilter(),
+                new ExtremeValueFilter()
         );
 
         // Create the processing service

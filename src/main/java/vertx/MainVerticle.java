@@ -49,9 +49,9 @@ public class MainVerticle extends AbstractVerticle {
         // Chain deployments of verticles in order
         vertx.deployVerticle(new ReaderBDVerticle(), workerOptions)
                 .compose(id -> vertx.deployVerticle(new ProducerBDVerticle()))
-
-                // TODO: Add other filter and transformation verticles here
-
+                .compose(id -> vertx.deployVerticle(new ValidatorFilterVerticle()))
+                .compose(id -> vertx.deployVerticle(new UnitNormalizerFilterVerticle()))
+                .compose(id -> vertx.deployVerticle(new ExtremeValueFilterVerticle()))
                 .compose(id -> vertx.deployVerticle(new FileStorageVerticle()))
                 .onSuccess(id -> {
                     log.info("✅ Sistema de monitoreo iniciado.");

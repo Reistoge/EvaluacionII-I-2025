@@ -1,4 +1,4 @@
-package adhoc;
+package model;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
@@ -102,6 +102,7 @@ public class RawData {
     /** @param value the raw value to set */
     public void setValue(double value) { this.measuredValue = value; }
 
+
     /** @param unit the unit of measurement to set */
     public void setUnit(String unit) { this.unit = unit; }
 
@@ -114,5 +115,13 @@ public class RawData {
                 ", value=" + measuredValue +
                 ", unit='" + unit + '\'' +
                 '}';
+    }
+
+    public double getMeasuredValue() {
+        return this.measuredValue;
+    }
+
+    public void setMeasuredValue(double celsius) {
+        this.measuredValue = celsius;
     }
 }

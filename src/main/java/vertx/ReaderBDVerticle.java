@@ -1,6 +1,6 @@
 package vertx;
 
-import adhoc.RawData;
+import model.RawData;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;

@@ -61,14 +61,14 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Class</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="adhoc/CleanData.html" title="class in adhoc">CleanData</a></div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="adhoc/CleanData.html" title="class in app">CleanData</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Represents a cleaned and validated sensor reading, ready for storage
  after passing through the pipe-and-filter processing pipeline.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="adhoc/CleanDataRepository.html" title="class in adhoc">CleanDataRepository</a></div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="adhoc/CleanDataRepository.html" title="class in app">CleanDataRepository</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
-<div class="block">Repository class responsible for persisting instances of <a href="adhoc/CleanData.html" title="class in adhoc"><code>CleanData</code></a>
+<div class="block">Repository class responsible for persisting instances of <a href="adhoc/CleanData.html" title="class in app"><code>CleanData</code></a>
  into the database using JPA.</div>
 </div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="vertx/FileStorageVerticle.html" title="class in vertx">FileStorageVerticle</a></div>
@@ -76,7 +76,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Verticle responsible for receiving validated data via the EventBus
  and persisting it to a local text file.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="adhoc/Main.html" title="class in adhoc">Main</a></div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="adhoc/Main.html" title="class in app">Main</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Entry point of the application that coordinates the data processing pipeline.</div>
 </div>
@@ -90,29 +90,29 @@ loadScripts(document, 'script');</script>
 <div class="block">Verticle responsible for initiating a request to retrieve raw data (e.g., from a database or memory)
  and publishing each data item onto the EventBus channel <code>"raw.data.incoming"</code>.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="adhoc/RawData.html" title="class in adhoc">RawData</a></div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="adhoc/RawData.html" title="class in app">RawData</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Represents a raw, unprocessed sensor reading retrieved directly from the data source,
  typically stored before any normalization, validation, or filtering is applied.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="adhoc/RawDataFilter.html" title="interface in adhoc">RawDataFilter</a></div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="adhoc/RawDataFilter.html" title="interface in app">RawDataFilter</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
-<div class="block">Defines a strategy interface for filtering or transforming <a href="adhoc/RawData.html" title="class in adhoc"><code>RawData</code></a> objects.</div>
+<div class="block">Defines a strategy interface for filtering or transforming <a href="adhoc/RawData.html" title="class in app"><code>RawData</code></a> objects.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="adhoc/RawDataProcessingService.html" title="class in adhoc">RawDataProcessingService</a></div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="adhoc/RawDataProcessingService.html" title="class in app">RawDataProcessingService</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Service class responsible for orchestrating the processing of raw sensor data
- through a configurable pipeline of <a href="adhoc/RawDataFilter.html" title="interface in adhoc"><code>RawDataFilter</code></a>s and persisting valid
+ through a configurable pipeline of <a href="adhoc/RawDataFilter.html" title="interface in app"><code>RawDataFilter</code></a>s and persisting valid
  results into the clean data repository.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="adhoc/RawDataRepository.html" title="class in adhoc">RawDataRepository</a></div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="adhoc/RawDataRepository.html" title="class in app">RawDataRepository</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
-<div class="block">Repository class responsible for accessing <a href="adhoc/RawData.html" title="class in adhoc"><code>RawData</code></a> entries
+<div class="block">Repository class responsible for accessing <a href="adhoc/RawData.html" title="class in app"><code>RawData</code></a> entries
  from the <code>raw_readings</code> table in the database.</div>
 </div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="vertx/ReaderBDVerticle.html" title="class in vertx">ReaderBDVerticle</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab2">
-<div class="block">Verticle that queries the database for <a href="adhoc/RawData.html" title="class in adhoc"><code>RawData</code></a> records and returns
+<div class="block">Verticle that queries the database for <a href="adhoc/RawData.html" title="class in app"><code>RawData</code></a> records and returns
  the result to requesting verticles via the EventBus.</div>
 </div>
 </div>

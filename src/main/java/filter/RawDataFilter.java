@@ -1,6 +1,6 @@
-package adhoc;
+package filter;
 
-import adhoc.RawData;
+import model.RawData;
 
 /**
  * Defines a strategy interface for filtering or transforming {@link RawData} objects.

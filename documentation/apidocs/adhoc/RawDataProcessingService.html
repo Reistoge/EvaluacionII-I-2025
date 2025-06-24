@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="dc.created" content="2025-06-22">
-<meta name="description" content="declaration: package: adhoc, class: RawDataProcessingService">
+<meta name="description" content="declaration: package: app, class: RawDataProcessingService">
 <meta name="generator" content="javadoc/ClassWriterImpl">
 <link rel="stylesheet" type="text/css" href="../stylesheet.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../script-dir/jquery-ui.min.css" title="Style">
@@ -69,24 +69,24 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">adhoc</a></div>
+<div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">app</a></div>
 <h1 title="Class RawDataProcessingService" class="title">Class RawDataProcessingService</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
-<div class="inheritance">adhoc.RawDataProcessingService</div>
+<div class="inheritance">service.RawDataProcessingService</div>
 </div>
 <section class="class-description" id="class-description">
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">RawDataProcessingService</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">Service class responsible for orchestrating the processing of raw sensor data
- through a configurable pipeline of <a href="RawDataFilter.html" title="interface in adhoc"><code>RawDataFilter</code></a>s and persisting valid
+ through a configurable pipeline of <a href="RawDataFilter.html" title="interface in app"><code>RawDataFilter</code></a>s and persisting valid
  results into the clean data repository.
 
  <p>This class implements the core logic of a Pipe-and-Filter architecture:
- it retrieves all entries from the <a href="RawDataRepository.html" title="class in adhoc"><code>RawDataRepository</code></a>, applies a sequence
+ it retrieves all entries from the <a href="RawDataRepository.html" title="class in app"><code>RawDataRepository</code></a>, applies a sequence
  of transformations/validations via the filter chain, and if successful,
- stores the result in the <a href="CleanDataRepository.html" title="class in adhoc"><code>CleanDataRepository</code></a>.</p>
+ stores the result in the <a href="CleanDataRepository.html" title="class in app"><code>CleanDataRepository</code></a>.</p>
 
  <p>Data that fails any filter in the chain is discarded, and an explanatory
  message is printed to standard output.</p>
@@ -114,13 +114,13 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private final <a href="CleanDataRepository.html" title="class in adhoc">CleanDataRepository</a></code></div>
+<div class="col-first even-row-color"><code>private final <a href="CleanDataRepository.html" title="class in app">CleanDataRepository</a></code></div>
 <div class="col-second even-row-color"><code><a href="#cleanRepo" class="member-name-link">cleanRepo</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="RawDataFilter.html" title="interface in adhoc">RawDataFilter</a>&gt;</code></div>
+<div class="col-first odd-row-color"><code>private final <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="RawDataFilter.html" title="interface in app">RawDataFilter</a>&gt;</code></div>
 <div class="col-second odd-row-color"><code><a href="#filters" class="member-name-link">filters</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>private final <a href="RawDataRepository.html" title="class in adhoc">RawDataRepository</a></code></div>
+<div class="col-first even-row-color"><code>private final <a href="RawDataRepository.html" title="class in app">RawDataRepository</a></code></div>
 <div class="col-second even-row-color"><code><a href="#rawRepo" class="member-name-link">rawRepo</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
@@ -134,9 +134,9 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(adhoc.RawDataRepository,adhoc.CleanDataRepository,java.util.List)" class="member-name-link">RawDataProcessingService</a><wbr>(<a href="RawDataRepository.html" title="class in adhoc">RawDataRepository</a>&nbsp;rawRepo,
- <a href="CleanDataRepository.html" title="class in adhoc">CleanDataRepository</a>&nbsp;cleanRepo,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="RawDataFilter.html" title="interface in adhoc">RawDataFilter</a>&gt;&nbsp;filters)</code></div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(adhoc.RawDataRepository,adhoc.CleanDataRepository,java.util.List)" class="member-name-link">RawDataProcessingService</a><wbr>(<a href="RawDataRepository.html" title="class in app">RawDataRepository</a>&nbsp;rawRepo,
+ <a href="CleanDataRepository.html" title="class in app">CleanDataRepository</a>&nbsp;cleanRepo,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="RawDataFilter.html" title="interface in app">RawDataFilter</a>&gt;&nbsp;filters)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Constructs a new <code>RawDataProcessingService</code> with the required repositories and filter chain.</div>
 </div>
@@ -154,18 +154,18 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="RawData.html" title="class in adhoc">RawData</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#applyFilters(adhoc.RawData)" class="member-name-link">applyFilters</a><wbr>(<a href="RawData.html" title="class in adhoc">RawData</a>&nbsp;input)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="RawData.html" title="class in app">RawData</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#applyFilters(adhoc.RawData)" class="member-name-link">applyFilters</a><wbr>(<a href="RawData.html" title="class in app">RawData</a>&nbsp;input)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Applies the entire filter chain to the given <a href="RawData.html" title="class in adhoc"><code>RawData</code></a> input.</div>
+<div class="block">Applies the entire filter chain to the given <a href="RawData.html" title="class in app"><code>RawData</code></a> input.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processAll()" class="member-name-link">processAll</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Processes all raw records in the <a href="RawDataRepository.html" title="class in adhoc"><code>RawDataRepository</code></a>:
+<div class="block">Processes all raw records in the <a href="RawDataRepository.html" title="class in app"><code>RawDataRepository</code></a>:
  
      Applies each configured filter in order
-     Persists valid results as <a href="CleanData.html" title="class in adhoc"><code>CleanData</code></a>
+     Persists valid results as <a href="CleanData.html" title="class in app"><code>CleanData</code></a>
      Prints success or discard messages for each record
  </div>
 </div>
@@ -189,19 +189,19 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="rawRepo">
 <h3>rawRepo</h3>
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="RawDataRepository.html" title="class in adhoc">RawDataRepository</a></span>&nbsp;<span class="element-name">rawRepo</span></div>
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="RawDataRepository.html" title="class in app">RawDataRepository</a></span>&nbsp;<span class="element-name">rawRepo</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="cleanRepo">
 <h3>cleanRepo</h3>
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="CleanDataRepository.html" title="class in adhoc">CleanDataRepository</a></span>&nbsp;<span class="element-name">cleanRepo</span></div>
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="CleanDataRepository.html" title="class in app">CleanDataRepository</a></span>&nbsp;<span class="element-name">cleanRepo</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="filters">
 <h3>filters</h3>
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="RawDataFilter.html" title="interface in adhoc">RawDataFilter</a>&gt;</span>&nbsp;<span class="element-name">filters</span></div>
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="RawDataFilter.html" title="interface in app">RawDataFilter</a>&gt;</span>&nbsp;<span class="element-name">filters</span></div>
 </section>
 </li>
 </ul>
@@ -215,9 +215,9 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="&lt;init&gt;(adhoc.RawDataRepository,adhoc.CleanDataRepository,java.util.List)">
 <h3>RawDataProcessingService</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">RawDataProcessingService</span><wbr><span class="parameters">(<a href="RawDataRepository.html" title="class in adhoc">RawDataRepository</a>&nbsp;rawRepo,
- <a href="CleanDataRepository.html" title="class in adhoc">CleanDataRepository</a>&nbsp;cleanRepo,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="RawDataFilter.html" title="interface in adhoc">RawDataFilter</a>&gt;&nbsp;filters)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">RawDataProcessingService</span><wbr><span class="parameters">(<a href="RawDataRepository.html" title="class in app">RawDataRepository</a>&nbsp;rawRepo,
+ <a href="CleanDataRepository.html" title="class in app">CleanDataRepository</a>&nbsp;cleanRepo,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="RawDataFilter.html" title="interface in app">RawDataFilter</a>&gt;&nbsp;filters)</span></div>
 <div class="block">Constructs a new <code>RawDataProcessingService</code> with the required repositories and filter chain.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -239,10 +239,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="processAll()">
 <h3>processAll</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">processAll</span>()</div>
-<div class="block">Processes all raw records in the <a href="RawDataRepository.html" title="class in adhoc"><code>RawDataRepository</code></a>:
+<div class="block">Processes all raw records in the <a href="RawDataRepository.html" title="class in app"><code>RawDataRepository</code></a>:
  <ul>
      <li>Applies each configured filter in order</li>
-     <li>Persists valid results as <a href="CleanData.html" title="class in adhoc"><code>CleanData</code></a></li>
+     <li>Persists valid results as <a href="CleanData.html" title="class in app"><code>CleanData</code></a></li>
      <li>Prints success or discard messages for each record</li>
  </ul>
 
@@ -252,9 +252,9 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="applyFilters(adhoc.RawData)">
 <h3>applyFilters</h3>
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="RawData.html" title="class in adhoc">RawData</a></span>&nbsp;<span class="element-name">applyFilters</span><wbr><span class="parameters">(<a href="RawData.html" title="class in adhoc">RawData</a>&nbsp;input)</span>
+<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="RawData.html" title="class in app">RawData</a></span>&nbsp;<span class="element-name">applyFilters</span><wbr><span class="parameters">(<a href="RawData.html" title="class in app">RawData</a>&nbsp;input)</span>
                       throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></span></div>
-<div class="block">Applies the entire filter chain to the given <a href="RawData.html" title="class in adhoc"><code>RawData</code></a> input.</div>
+<div class="block">Applies the entire filter chain to the given <a href="RawData.html" title="class in app"><code>RawData</code></a> input.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>input</code> - the raw data record to process</dd>

@@ -37,6 +37,9 @@ public class ProducerBDVerticle extends AbstractVerticle {
                 for (int i = 0; i < readings.size(); i++) {
                     JsonObject reading = readings.getJsonObject(i);
                     vertx.eventBus().publish("raw.data.incoming", reading);
+
+
+
                 }
             } else {
                 System.err.println("Failed to read from database: " + ar.cause().getMessage());

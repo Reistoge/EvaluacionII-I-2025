@@ -1,7 +1,8 @@
-package adhoc;
+package repository;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
+import model.CleanData;
 
 /**
  * Repository class responsible for persisting instances of {@link CleanData}
