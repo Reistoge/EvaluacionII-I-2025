@@ -9,13 +9,13 @@ import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.noClasses;
 public class ArchRules {
 
     @ArchTest
-    public static final ArchRule filters_should_implement_RawDataFilter =
+    public static final ArchRule filtros_deben_implementar_RawDataFilter =
             classes().that().areNotInterfaces().and().resideInAPackage("..filter..")
                     .should().implement(filter.RawDataFilter.class);
 
     @ArchTest
-    public static final ArchRule filters_should_not_access_repository =
+    public static final ArchRule capa_filtro_no_debe_acceder_directamente_repositorio =
             noClasses().that().resideInAPackage("..filter..")
-                    .and().haveSimpleNameNotEndingWith("ExtremeValueFilter") // allow only last filter if needed
+                    .and().haveSimpleNameNotEndingWith("ExtremeValueFilter") // excepto el tercer filtro
                     .should().dependOnClassesThat().resideInAPackage("..repository..");
 }
