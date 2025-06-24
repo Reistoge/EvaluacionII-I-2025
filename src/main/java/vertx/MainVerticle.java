@@ -85,7 +85,7 @@ public class MainVerticle extends AbstractVerticle {
     private void testWithSampleData() {
         log.info("Sending test data through the pipeline...");
 
-        // Example with Fahrenheit
+        // ejemplo con Fahrenheit
         JsonObject tempF = new JsonObject()
                 .put("variableType", "temperature")
                 .put("value", 86.0)
@@ -93,7 +93,7 @@ public class MainVerticle extends AbstractVerticle {
                 .put("timestamp", LocalDateTime.now().toString());
         vertx.eventBus().publish("raw.data.incoming", tempF);
 
-        // Example with mg/m3
+        // ejemplo con with mg/m3
         JsonObject mp = new JsonObject()
                 .put("variableType", "mp")
                 .put("value", 0.5)
@@ -101,7 +101,7 @@ public class MainVerticle extends AbstractVerticle {
                 .put("timestamp", LocalDateTime.now().toString());
         vertx.eventBus().publish("raw.data.incoming", mp);
 
-        // Example with invalid type
+        // ejemplo con un valor invalido
         JsonObject invalid = new JsonObject()
                 .put("variableType", "unknown")
                 .put("value", 100.0)

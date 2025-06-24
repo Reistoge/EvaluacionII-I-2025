@@ -55,7 +55,7 @@ public class Main {
         RawDataRepository rawRepo = new RawDataRepository(emf);
         CleanDataRepository cleanRepo = new CleanDataRepository(emf);
 
-        // TODO: Instantiate filters and replace `null` entries
+        // aqui se intancian los filtros y se reemplazan los null
         List<RawDataFilter> filters = List.of(
                 new ValidatorFilter(),
                 new UnitNormalizerFilter(),

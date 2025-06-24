@@ -74,7 +74,9 @@ public class RawDataProcessingService {
 
         for (RawData raw : allRaw) {
             try {
+                log.info("Dato before: " + raw.toString());
                 RawData filtered = applyFilters(raw);
+
                 CleanData clean = new CleanData(
                         filtered.getType(),
                         filtered.getTimestamp(),
